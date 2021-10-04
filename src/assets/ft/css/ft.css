@@ -1,0 +1,5 @@
+@font-face {
+    font-family:xyz;
+    font-weight:300;
+    src:url("../font/download.woff2") format("woff2")
+}
