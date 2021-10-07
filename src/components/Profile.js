@@ -9,7 +9,7 @@ import { Container } from "@material-ui/core";
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
 // assets
-import Img from "../assets/p1.png"
+import Img from "../assets/p2.png"
 import jblue from "../assets/jblue.png"
 import bg1 from "../assets/bg1.jpg"
 import bg2 from "../assets/bg2.jpg"
@@ -308,8 +308,8 @@ const useStyles = makeStyles((theme)=> ({
     },
     ellipse_container_inner : {
         position: "absolute",
-        width:"35%",
-        height: "35%",
+        width:"33%",
+        height: "33%",
         borderRadius:"50%",
         top:"50%",
         left:"50%",
@@ -341,48 +341,20 @@ const useStyles = makeStyles((theme)=> ({
        transform : "rotate(-45deg)",
        top: "12px",
        left: "12px",
-       boxShadow: "3px 10px #08fdd8",
+    //    boxShadow: "3px 10px #08fdd8",
        animation : "$ellipseRotateleft 12s ease-in-out infinite",
-    //    "&::after" : {
-    //        content: "'P'",
-    //        top: "30%",
-    //        display:"block",
-    //        position:"relative",
-    //        transform:"translateY(14px)",
-    //        left:"-19px",
-    //        borderRadius:"50%",
-    //        padding:"10px",
-    //        width: "30px",
-    //        height:"30px",
-    //        backgroundColor: "brown"
-    //    }
     },
     node : {
-           top: "30%",
-           display:"block",
-           position:"relative",
-           margin:"auto",
-           transform:"translateY(14px)",
-           left:"-220px",
-           borderRadius:"50%",
-           padding:"30px",
-           width: "30px",
-           height:"30px",
-           backgroundColor: "#962247b8",
+           top: "0%",
+           display:"flex",
+           width:"100%",
+           height:"100%",
+           justifyContent:"center",
+           alignItems:"center",
+           position:"absolute",
+           left:"0px",
+        //    backgroundColor: "#962247b8",
             boxShadow:" rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
-            "&::after" : {
-                content: "'P'",
-                top: "30%",
-                display:"block",
-                position:"relative",
-                transform:"translateY(14px)",
-                left:"-19px",
-                borderRadius:"50%",
-                padding:"10px",
-                width: "30px",
-                height:"30px",
-                backgroundColor: "#098276c7"
-            }
     },
     yellow : {
         width:"93%",
@@ -527,7 +499,12 @@ const Profile = (props) => {
                                     <div className={classes.ellipse_container_inner}>
                                         <div className={[classes.ellipse, classes.thin].join(' ')}></div>
                                         <div className={[classes.ellipse, classes.thick].join(' ')}> 
-                                            <div className={classes.node}></div>
+                                            
+                                        </div>
+                                        <div className={classes.node}>
+                                        <span>
+                                            <img src={Img} style={{width:"60px", padding:"10px",borderRadius:"50%", backgroundColor:"#3d5c66cc"}}/>
+                                        </span>
                                         </div>
                                         <div className={[classes.ellipse, classes.yellow].join(' ')}></div>
                                     </div>
@@ -588,10 +565,10 @@ const Profile = (props) => {
                             </div>
                             <div style={{marginTop:"5rem"}}>
                                 <Grid container spacing={1} ref={grid}>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                             <Card></Card>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg2} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -600,7 +577,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg3} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -609,7 +586,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg4} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -618,7 +595,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg5} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -627,7 +604,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg6} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -636,7 +613,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg7} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
@@ -645,7 +622,7 @@ const Profile = (props) => {
                                             <span className={classes.card__tri}></span>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={6} sm={6} md={4}>
+                                    <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg8} className={classes.card_img} style={{width:"100%"}}></img>
                                             {/* <div className={classes.card_overlay}>
