@@ -185,7 +185,7 @@ export default function Card (props) {
     return (
         <>
             <div className={classes.card}>
-                <img src={bg1} className={classes.card_img} style={{width:"100%"}}></img>
+                <img src={props.details.img} className={classes.card_img} style={{width:"100%"}}></img>
                 {/* <div className={classes.card_overlay}>
                 </div> */}
                 <span className={classes.card__rect}></span>
