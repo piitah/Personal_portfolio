@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import { Container } from "@material-ui/core";
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
+import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
 import jblue from "../assets/jblue.png"
@@ -73,12 +74,20 @@ const useStyles = makeStyles((theme)=> ({
         letterSpacing: "3px",
         fontFamily:"xyz",
         lineHeight: "0px",
-        [theme.breakpoints.down("xs")]: {
+        [theme.breakpoints.down("sm")]: {
             fontSize: "37px",
             letterSpacing: "-0px",
             lineHeight: "2px",
             marginBottom:"60px"
         },
+    },
+    emoji_container : {
+        position:"relative"
+    },
+    emoji : {
+        position:"absolute",
+        top:"0px",
+        fontSize:"45px"
     },
     title: {
         marginTop: "-30px",
@@ -92,7 +101,7 @@ const useStyles = makeStyles((theme)=> ({
     },
     portfolio_wrapper: {
         position:"relative",
-        width: "80%",
+        width: "90%",
         margin: "auto",
         zIndex:"20",
         [theme.breakpoints.down("xs")]: {
@@ -284,7 +293,7 @@ const useStyles = makeStyles((theme)=> ({
         },
     },
     about_wrapper : {
-        width: "80%",
+        width: "90%",
         marginTop:"5rem",
         margin:"auto",
         [theme.breakpoints.down("xs")]: {
@@ -511,7 +520,12 @@ const Profile = (props) => {
                                 </div>
                                 <div style={{width:"100%"}} ref={profile}> 
                                     <div className={classes.font} >
-                                        <h3><span>Hi,</span></h3> 
+
+                                        <h3>    
+                                            <span className={classes.emoji_container}>Hi,
+                                                <span className={classes.emoji}>👋</span>
+                                            </span>
+                                        </h3> 
                                         <h3><span>I’m Peter,</span></h3>
                                         <h3><span>web developer.</span></h3>
                                     </div>
@@ -519,9 +533,9 @@ const Profile = (props) => {
                                         <span>A passionate Front-end developer / UI/UX Designer</span>
                                     </div>
                                     <div className={classes.contact_btn}>
-                                        <zpan><Button className={classes.button} variant="outlined">
+                                        <span><Button className={classes.button} variant="outlined">
                                             CONTACT ME
-                                        </Button></zpan>
+                                        </Button></span>
                                     </div>
                                 </div>
                                 {/* <div style={{width: "35%"}}> */}
@@ -564,10 +578,19 @@ const Profile = (props) => {
                                 </Grid>
                             </div>
                             <div style={{marginTop:"5rem"}}>
-                                <Grid container spacing={1} ref={grid}>
-                                    <Grid item xs={12} sm={6} md={4}>
+                                <Grid container spacing={1} style={{height:"max-content"}} ref={grid}>
+                                   {
+                                       datas.map((data,index) => {
+                                            return (
+                                                <Grid key={index} item xs={12} sm={6} md={4}>
+                                                    <Card details={data}></Card>
+                                                </Grid>
+                                            )
+                                       })
+                                   }
+                                    {/* <Grid item xs={12} sm={6} md={4}>
                                             <Card></Card>
-                                    </Grid>
+                                    </Grid> */}
                                     <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg2} className={classes.card_img} style={{width:"100%"}}></img>

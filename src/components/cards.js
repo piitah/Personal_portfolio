@@ -1,7 +1,9 @@
 import React  from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import { FaReact, FaVuejs } from 'react-icons/fa';
+import { FaReact, FaVuejs} from 'react-icons/fa';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import bg1 from "../assets/bg1.jpg"
+import bg2 from "../assets/bg2.jpg"
 
 const useStyles = makeStyles(() => ({
     card : {
@@ -10,6 +12,7 @@ const useStyles = makeStyles(() => ({
         backfaceVisibility: "hidden",
         width: "100%",
         height:"100%",
+        height:"max-content",
         cursor:"pointer",
         overflow:"hidden",
         transition:"all 0.5",
@@ -91,28 +94,29 @@ const useStyles = makeStyles(() => ({
         }
     },
     card_inner_wrap: {
-        position:"absolute",
-        bottom: "0",
-        left:"8%"
+        // backgroundColor:"#fff",
+        margin:"10px 0"
     },
     card_title: {
         margin:"0",
         fontSize: "18px",
         fontFamily:"camphor",
-        fontWeight: "500",
+        fontWeight: "600",
+        color:"#0ae1c0",
+        width:"max-content",
         "&::before": {
             content: "''",
             top:"23px",
             left:"0",
             position:"absolute",
-            width:"30px",
-            height:"2px",
+            width:"10%",
+            height:"3px",
             backgroundColor:"#fff"
         }
 
     },
     card_desc: {
-        fontSize: "11px",
+        fontSize: "12px",
         fontFamily:"camphor",
         fontWeight: "300",
     },
@@ -128,6 +132,52 @@ const useStyles = makeStyles(() => ({
         fontFamily:"xyz",
         fontWeight: "600",
     },
+    stacks: {
+        marginBottom:"10px",
+        display: "flex",
+        width:"max_content",
+        flexDirection:"row"
+    },
+    skills_wrapper: {
+        // width:"100%",
+        
+    },
+    skills : {
+        fontFamily:"camphor",
+        fontSize:"14px",
+        fontWeight:"500",
+        padding:"5px 15px",
+        backgroundColor:"#eee",
+        color:"black",
+        borderRadius:"20px",
+        margin:"0px 7px 0px 0px",
+        boxShadow:" rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px"
+    },
+    link_wrapper: {
+        width:"100%",
+        display:"flex",
+        flexDirection: "row",
+        justifyContent:"start",
+        alignItems:"normal",
+        cursor:"pointer"
+    },
+    port_link:{
+        fontSize:"13px",
+        fontFamily: "camphor",
+        position:"relative",
+        width:"max-content",
+        color:"#fff",
+        cursor:"Pointer",
+        "&::before": {
+            content: "''",
+            top:"19px",
+            left:"0",
+            position:"absolute",
+            width:"100%",
+            height:"1.5px",
+            backgroundColor:"#fff"
+        }
+    }
 }))
 
 export default function Card (props) {
@@ -140,13 +190,28 @@ export default function Card (props) {
                 </div> */}
                 <span className={classes.card__rect}></span>
                 <span className={classes.card__tri}></span>
-                <div className={classes.card_inner_wrap}>
-                    <p className={classes.card_title}>E-Commerce</p>
-                    <p className={classes.card_desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    <div className={classes.stacks}>
-                    <i class="fab fa-react"></i>
-                    <FaReact/><FaVuejs />
-                    </div>
+            </div>
+            <div className={classes.card_inner_wrap}>
+                <p className={classes.card_title}>{props.details.title}</p>
+                <p className={classes.card_desc}>
+                    {props.details.desc}
+                </p>
+                <div className={classes.stacks}>
+                    {
+                        props.details.stacks.map((stack, key) => {
+                            return (
+                                <div className={classes.skills_wrapper}>
+                                    <div key={key} className={classes.skills}>{stack}</div>
+                                </div>
+                            )
+                        })
+                    }
+                    {/* <span className={classes.skills}>Vue</span>
+                    <span className={classes.skills} >Vuex</span>
+                    <span className={classes.skills}>Vuetify</span> */}
+                </div>
+                <div className={classes.link_wrapper}>
+                    <span className={classes.port_link}>Visit Site</span> <ArrowRightAltIcon style={{marginLeft:"7px", color:"#0ae1c0"}}/>
                 </div>
             </div>
         </>

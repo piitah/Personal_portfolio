@@ -14,6 +14,7 @@ import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from '@material-ui/core/SvgIcon';
 import img from "../assets/p2.png"
 import {Power3, TimelineLite,} from "gsap"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor :"#040809",
