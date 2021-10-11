@@ -263,7 +263,7 @@ const useStyles = makeStyles((theme)=> ({
     portfolio_text : {
         margin:"0",
         width:"100%",
-        fontSize : "0.8rem",
+        fontSize : "1rem",
         lineHeight: "1.5",
         fontFamily: "camphor, Open Sans, Segoe UI, san-serif !important",
         fontWeight: '200px',
@@ -560,16 +560,17 @@ const Profile = (props) => {
                                         <div className={classes.portfolio_text}>
                                             <span>
                                                 A small gallery of recent projects chosen by me. I've done them all 
-                                                using various javascript frameworks E.g React, Vue, Node etc.t {/*<br/> */} 
+                                                using various javascript frameworks E.g React, Vue, Node etc.                                                A small gallery of recent projects chosen by me. I've done them all 
+                                                using various javascript frameworks E.g React, Vue, Node etc. {/*<br/> */} 
                                             </span>
                                         </div>
                                     </Grid>
                                     <Grid item  xs={12} sm={12} md={2}>
-                                        {/* <div style={{display:"flex", width:'100%', flexDirection:"row"}}> */}
-                                            {/* <Button className={classes.button1} variant="outlined">
+                                        <div style={{display:"flex", width:'100%', flexDirection:"row"}}>
+                                            <Button className={classes.button1} variant="outlined">
                                                 See more
-                                            </Button> */}
-                                        {/* </div> */}
+                                            </Button>
+                                        </div>
                                     </Grid>
                                 </Grid>
                             </div>
@@ -584,9 +585,6 @@ const Profile = (props) => {
                                             )
                                        })
                                    }
-                                    {/* <Grid item xs={12} sm={6} md={4}>
-                                            <Card></Card>
-                                    </Grid> */}
                                     <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.card}>
                                             <img src={bg2} className={classes.card_img} style={{width:"100%"}}></img>
@@ -671,11 +669,11 @@ const Profile = (props) => {
                                         JavaScript, Web Technologies, User Experience, 
                                         Accessibility, Clean Code, and the Universe. And everything in between<br/>
                                         <br/><br/>
-                                        In October 2018 I decided it was time for a change, so I started to wake
-                                        up at 6am to study javascript before going into work. I quickly started
-                                        to love Javascript, and in January 2019 I decided to take the risk and
-                                        quit my job. I’ve been studying Front-end development full time ever
-                                            since and I documented my whole journey on my Instagram.
+                                        When I am not writing code I love to spend time with my wife and 3 year old daughter at 
+                                        home in London or travelling around the world. We are quite a multi-cultural family with
+                                         me having grown up in Germany 🇩🇪 and my wife being from Mexico 🇲🇽, which is why we raise 
+                                         our daughter trilingual. I myself speak five languages (some better than others). 
+                                        Furthermore I enjoy cooking fresh food when I come home after a long day at the office.
                                         </p>
                                     </Grid>
                                 </Grid>
