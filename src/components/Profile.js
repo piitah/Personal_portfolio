@@ -559,20 +559,16 @@ const Profile = (props) => {
                                     <Grid item  xs={12} sm={12} md={10}>
                                         <div className={classes.portfolio_text}>
                                             <span>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Quas nesciunt eaque aliquid doloremque id consequatur 
-                                            ratione. Modi, odio possimus praesentium  beatae 
-                                            sit ipsa earum? {/*<br/> */} Consequuntur cumque pariatur itaque 
-                                            distinctio.{/*<br/> */} Consequuntur cumque pariatur itaque 
-                                            distinctio.
+                                                A small gallery of recent projects chosen by me. I've done them all 
+                                                using various javascript frameworks E.g React, Vue, Node etc.t {/*<br/> */} 
                                             </span>
                                         </div>
                                     </Grid>
                                     <Grid item  xs={12} sm={12} md={2}>
                                         {/* <div style={{display:"flex", width:'100%', flexDirection:"row"}}> */}
-                                            <Button className={classes.button1} variant="outlined">
+                                            {/* <Button className={classes.button1} variant="outlined">
                                                 See more
-                                            </Button>
+                                            </Button> */}
                                         {/* </div> */}
                                     </Grid>
                                 </Grid>
@@ -668,11 +664,12 @@ const Profile = (props) => {
                                 <Grid container spacing={4}>
                                     <Grid item md={7}>
                                         <p className={classes.portfolio_text} >
-                                        I’m Peter , a 23 years old self-taught Front-end developer , from Portugal .
-                                        After my ycollege degree in "Communication & Multimedia", I got a job as a "developer", 
-                                        where I stayed for almost 2 years, but I only developed websites with Wordpress custom themes,
-                                        and HTML <br/>
-                                        & CSS… So I wasn’t learning and improving, I felt stuck.
+                                        I’m Peter , a 23 years old self-taught Front-end developer.
+                                        I passionately combine good design, technology, and innovation in all my projects, 
+                                        which I like to accompany from the first idea to release. Currently, I'm focused 
+                                        on the development of responsive user interfaces with React and I'm interested in 
+                                        JavaScript, Web Technologies, User Experience, 
+                                        Accessibility, Clean Code, and the Universe. And everything in between<br/>
                                         <br/><br/>
                                         In October 2018 I decided it was time for a change, so I started to wake
                                         up at 6am to study javascript before going into work. I quickly started
