@@ -26,12 +26,14 @@ const useStyles = makeStyles((theme) => ({
             },
             "& $card__rect":{
                 top:"0%",
+                opacity:"1",
                 "&::before": {
                     transform:"translateY(-400px)",
                 }
             },
             "& $card__tri":{
                 top:"-150%",
+                opacity:"1",
                 "&::before": {
                     transform:"translateY(-10px)",
                 }
@@ -57,13 +59,13 @@ const useStyles = makeStyles((theme) => ({
     },
     card__rect: {
         width: "850px",
-        height: "1150px",
+        height: "1250px",
         backgroundColor:"#fff",
         position:"absolute",
         top:"180%",
         left:"-207%",
         transform:"rotate(40deg)",
-        opacity: ".9",
+        opacity: "0",
         transition: "all .4s ease-in-out",
         "&::before": {
             content:"''",
@@ -84,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
         position:"absolute",
         top:"-300%",
         left:"59%",
+        opacity:"0",
         transform:"rotate(45deg)",
         transition: "all .4s ease-in-out",
         "&::before": {
@@ -117,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
         width:"max-content",
         [theme.breakpoints.down("sm")]: {
             fontSize: "1rem",
+            fontWeight: "600",
         },
         "&::before": {
             content: "''",
@@ -136,7 +140,7 @@ const useStyles = makeStyles((theme) => ({
         color:"#fbe9e9",
         wordWrap:"break-word",
         [theme.breakpoints.down("sm")]: {
-            fontSize: "0.7rem",
+            fontSize: "0.8rem",
         },
     },
     card_stacks: {
@@ -158,6 +162,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection:"row",
         [theme.breakpoints.down("sm")]: {
             marginBottom:"5px",
+            marginTop:"9px"
         },
     },
     skills_wrapper: {
@@ -185,6 +190,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent:"start",
         alignItems:"normal",
         cursor:"pointer",
+        [theme.breakpoints.down("sm")]: {
+            marginTop: "12px",
+        },
     },
     port_link:{
         fontSize:"13px",
