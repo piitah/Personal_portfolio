@@ -22,9 +22,16 @@ export const datas = [
         link: "sssss"
     },
     {
-        title : "pastebin clone",
+        title : "Pastebin clone",
         desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
         img: require("./assets/bg4.jpg"),
+        stacks: ["Vue", "Vuex", "Node", "MongoBb"],
+        link: "sssss"
+    },
+    {
+        title : "Netlify clone",
+        desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
+        img: require("./assets/bg7.jpg"),
         stacks: ["Vue", "Vuex", "Node", "MongoBb"],
         link: "sssss"
     }

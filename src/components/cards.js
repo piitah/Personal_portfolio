@@ -5,7 +5,7 @@ import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import bg1 from "../assets/bg1.jpg"
 import bg2 from "../assets/bg2.jpg"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     card : {
         position:  "relative",
         display:"block",
@@ -35,6 +35,11 @@ const useStyles = makeStyles(() => ({
                 "&::before": {
                     transform:"translateY(-10px)",
                 }
+            },
+            "& $card_inner_wrap":{
+                top:"20%",
+                opacity:"1"
+                // display:"block"
             }
         }
     },
@@ -52,11 +57,11 @@ const useStyles = makeStyles(() => ({
     },
     card__rect: {
         width: "850px",
-        height: "950px",
+        height: "1150px",
         backgroundColor:"#fff",
         position:"absolute",
         top:"180%",
-        left:"-200%",
+        left:"-207%",
         transform:"rotate(40deg)",
         opacity: ".9",
         transition: "all .4s ease-in-out",
@@ -94,16 +99,25 @@ const useStyles = makeStyles(() => ({
         }
     },
     card_inner_wrap: {
-        // backgroundColor:"#fff",
-        margin:"10px 0"
+        position:"absolute",
+        top:"400px",
+        left:"10px",
+        margin:"10px 0",
+        opacity:"0",
+        transition: "all .6s ease-in-out",
+        maxWidth:"100%"
     },
     card_title: {
         margin:"0",
         fontSize: "18px",
         fontFamily:"camphor",
         fontWeight: "600",
-        color:"#0ae1c0",
+        // color:"#0ae1c0",
+        color:"#fd2155",
         width:"max-content",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "1rem",
+        },
         "&::before": {
             content: "''",
             top:"23px",
@@ -116,9 +130,14 @@ const useStyles = makeStyles(() => ({
 
     },
     card_desc: {
-        fontSize: "12px",
+        fontSize: "0.8rem",
         fontFamily:"camphor",
         fontWeight: "300",
+        color:"#fbe9e9",
+        wordWrap:"break-word",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "0.7rem",
+        },
     },
     card_stacks: {
         display:"flex",
@@ -136,7 +155,10 @@ const useStyles = makeStyles(() => ({
         marginBottom:"10px",
         display: "flex",
         width:"max_content",
-        flexDirection:"row"
+        flexDirection:"row",
+        [theme.breakpoints.down("sm")]: {
+            marginBottom:"5px",
+        },
     },
     skills_wrapper: {
         // width:"100%",
@@ -144,14 +166,17 @@ const useStyles = makeStyles(() => ({
     },
     skills : {
         fontFamily:"camphor",
-        fontSize:"14px",
+        fontSize:"12px",
         fontWeight:"500",
-        padding:"5px 15px",
+        padding:"5px 10px",
         backgroundColor:"#eee",
         color:"black",
         borderRadius:"20px",
         margin:"0px 7px 0px 0px",
-        boxShadow:" rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px"
+        boxShadow:" rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "8px",
+        },
     },
     link_wrapper: {
         width:"100%",
@@ -159,7 +184,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: "row",
         justifyContent:"start",
         alignItems:"normal",
-        cursor:"pointer"
+        cursor:"pointer",
     },
     port_link:{
         fontSize:"13px",
@@ -168,6 +193,9 @@ const useStyles = makeStyles(() => ({
         width:"max-content",
         color:"#fff",
         cursor:"Pointer",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "8px",
+        },
         "&::before": {
             content: "''",
             top:"19px",
@@ -175,7 +203,10 @@ const useStyles = makeStyles(() => ({
             position:"absolute",
             width:"100%",
             height:"1.5px",
-            backgroundColor:"#fff"
+            backgroundColor:"#fff",
+            [theme.breakpoints.down("sm")]: {
+            top:"14px",
+        },
         }
     }
 }))
@@ -190,8 +221,7 @@ export default function Card (props) {
                 </div> */}
                 <span className={classes.card__rect}></span>
                 <span className={classes.card__tri}></span>
-            </div>
-            <div className={classes.card_inner_wrap}>
+                <div className={classes.card_inner_wrap}>
                 <p className={classes.card_title}>{props.details.title}</p>
                 <p className={classes.card_desc}>
                     {props.details.desc}
@@ -206,14 +236,13 @@ export default function Card (props) {
                             )
                         })
                     }
-                    {/* <span className={classes.skills}>Vue</span>
-                    <span className={classes.skills} >Vuex</span>
-                    <span className={classes.skills}>Vuetify</span> */}
                 </div>
                 <div className={classes.link_wrapper}>
-                    <span className={classes.port_link}>Visit Site</span> <ArrowRightAltIcon style={{marginLeft:"7px", color:"#0ae1c0"}}/>
+                    <span className={classes.port_link}>Visit Site</span> <ArrowRightAltIcon style={{marginLeft:"7px", color:"#fff"}}/>
                 </div>
             </div>
+            </div>
+            
         </>
     )
 }
