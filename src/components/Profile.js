@@ -8,6 +8,7 @@ import { Container } from "@material-ui/core";
 import Contact from "../components/contact"
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
+import Skills from "../components/skills"
 import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
@@ -395,7 +396,7 @@ const Profile = (props) => {
                                     <Grid item  xs={12} sm={12} md={10}>
                                         <div className={classes.portfolio_text}>
                                             <span>
-                                                i enjoy building beautiful, user-friendly websites and web applications. These are small gallery of recent 
+                                                I enjoy building beautiful, user-friendly websites and web applications. These are small gallery of recent 
                                                 projects chosen by me, Look through some of my work and experiences! If you 
                                                 like what you see and have a project you need to be coded, don't hesitate to contact me. 
                                             </span>
@@ -432,7 +433,7 @@ const Profile = (props) => {
                             </div>
                             <div style={{marginTop:"1rem"}}>
                                 <Grid container spacing={4}>
-                                    <Grid item md={7}>
+                                    <Grid item md={6}>
                                         <p className={classes.portfolio_text} >
                                         The primary area of my interest is Front-end. 
                                         I passionately combine good design, technology, and innovation in all my projects, 
@@ -451,12 +452,15 @@ const Profile = (props) => {
                                         Furthermore I enjoy cooking fresh food when I come home after a long day at the office. */}
                                         </p>
                                     </Grid>
+                                    <Grid item md={6}>
+                                            <Skills/>
+                                    </Grid>
                                 </Grid>
                             </div>
                         </div>
                      </section>
                     
-                    <section ref={myRef} className={classes.about_wrapper} id="About">
+                    <section ref={myRef} className={classes.about_wrapper} style={{marginBottom:"10px"}} id="About">
                         <Contact/>
                     </section>
                     

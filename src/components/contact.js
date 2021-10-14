@@ -4,8 +4,9 @@ import { TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import map from "../assets/map.png"
 import { Button } from "@material-ui/core";
-// import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com'
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2'
 
 const useStyles = makeStyles((theme) => ({
     Contact_Header : {
@@ -36,11 +37,13 @@ const useStyles = makeStyles((theme) => ({
     button: {
         marginTop: "16px",
         width: "160px",
+        padding:"12px 13px",
         fontSize: "15px",
         color: "#08fdd8",
         borderColor: "#08fdd8" ,
         cursor: "pointer"    ,
-        zIndex: "20" 
+        zIndex: "20",
+        float:"right"
     },
     errorMsg_wrapper: {
         color:"#fd2155",
@@ -91,7 +94,7 @@ const CssTextField = withStyles({
 
 const Contact = (props) => {
     const classes = useStyles()
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit,reset, formState: { errors } } = useForm();
 
     // variables
     // const [inputs, setInputs] = useState({
@@ -111,27 +114,28 @@ const Contact = (props) => {
     
     const onSubmit = (data) => {
         console.log(data)
-        // const serviceId = 'service_bos76ms';
-        // const templateId = 'template_6u4j72p';
-        // const userId = 'user_VeltVUOKXWhh244xxw5vY';
+        const serviceId = 'service_bos76ms';
+        const templateId = 'template_6u4j72p';
+        const userId = 'user_VeltVUOKXWhh244xxw5vY';
         
-        // let templateParams = {
-        //     from_name : inputs.Name,
-        //     email : inputs.Email,
-        //     message : inputs.Message,
-        //     subject : inputs.Subject
-        // };
-        //     emailjs.send(serviceId, templateId, templateParams, userId)
-        //         .then(response => console.log(response))
-        //         .then(error => console.log(error));
-
-        // setInputs((inputs) => ({
-        //         ...inputs, 
-        //         Name : "",
-        //         Email : "",
-        //         Subject : "",
-        //         Message : ""
-        // }))
+        let templateParams = {
+            from_name : data.Name,
+            email : data.Email,
+            message : data.Message,
+            subject : data.Subject
+        };
+            emailjs.send(serviceId, templateId, templateParams, userId)
+                .then(
+                    response => console.log(response),
+                    Swal.fire(
+                        'Thanks for reaching out!',
+                        'Press ok to close!',
+                        'success'
+                      )
+                )
+                .then(error => console.log(error));
+                
+                reset()
     }
 
     return (
