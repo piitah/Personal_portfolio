@@ -1,26 +1,18 @@
 import React, {useRef, useEffect} from "react"
-import {makeStyles, withStyles} from "@material-ui/core/styles"
+import {makeStyles} from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
-import TextField from '@material-ui/core/TextField';
 import Particles from 'react-particles-js';
 import hoverEffect from "hover-effect" 
 import Grid from '@material-ui/core/Grid';
 import { Container } from "@material-ui/core";
+import Contact from "../components/contact"
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
 import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
-import jblue from "../assets/jblue.png"
-import bg1 from "../assets/bg1.jpg"
-import bg2 from "../assets/bg2.jpg"
 import bg3 from "../assets/bg3.jpg"
-import bg4 from "../assets/bg4.jpg"
-import bg5 from "../assets/bg5.jpg"
-import bg6 from "../assets/bg6.jpg"
 import bg7 from "../assets/bg7.jpg"
-import bg8 from "../assets/bg8.jpg"
-import map from "../assets/map.png"
 import space from "../assets/bbgg.jpg"
 
 const useStyles = makeStyles((theme)=> ({
@@ -127,130 +119,6 @@ const useStyles = makeStyles((theme)=> ({
             fontSize: "15rem"
         },
     },
-    card : {
-        position:  "relative",
-        display:"block",
-        backfaceVisibility: "hidden",
-        width: "100%",
-        height:"100%",
-        cursor:"pointer",
-        overflow:"hidden",
-        transition:"all 0.5",
-        // boxShadow:" rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px"
-        "&:hover": {
-            "& $card_img": {
-                transform: "scale(1.3)",
-            },
-            "& $card_overlay":{
-                opacity:"1",
-            },
-            "& $card__rect":{
-                top:"0%",
-                "&::before": {
-                    transform:"translateY(-100px)",
-                }
-            },
-            "& $card__tri":{
-                top:"-150%",
-                "&::before": {
-                    transform:"translateY(-10px)",
-                }
-            }
-        }
-    },
-    card_img: {
-        transform:"scale(1)",
-        transition: "all 0.5s ease"
-    },
-    card_overlay : {
-        position: "absolute",
-        width:"100%",
-        height:"100%",
-        top:"0",
-        left: '-100%',
-        backgroundImage: "linear-gradient(to right bottom,rgb(8 253 216 / 96%),rgb(206 22 66 / 22%))"
-    },
-    card__rect: {
-        width: "750px",
-        height: "750px",
-        backgroundColor:"#fff",
-        position:"absolute",
-        top:"180%",
-        left:"-78%",
-        transform:"rotate(40deg)",
-        opacity: ".9",
-        transition: "all .4s ease-in-out",
-        "&::before": {
-            content:"''",
-            display:"block",
-            position:"relative",
-            backgroundColor:"#3f9e90f7",
-            width:"100%",
-            height:"100%",
-            transform:"translateY(200px)",
-            transition: "all .5s ease-in-out",
-            transitionDelay: ".1s"
-        }
-    },  
-    card__tri : {
-        width: "400px",
-        height: "400px",
-        backgroundColor:"#fff",
-        position:"absolute",
-        top:"-300%",
-        left:"59%",
-        transform:"rotate(45deg)",
-        transition: "all .4s ease-in-out",
-        "&::before": {
-            content:"''",
-            display:"block",
-            position:"relative",
-           backgroundColor: "#fd2155",
-            width:"100%",
-            height:"100%",
-            transform:"translateY(-100px)",
-            transition: "all .5s ease-in-out",
-            transitionDelay: ".1s"
-        }
-    },
-    card_inner_wrap: {
-        position:"absolute",
-        bottom: "0",
-        left:"8%"
-    },
-    card_title: {
-        margin:"0",
-        fontSize: "18px",
-        fontFamily:"camphor",
-        fontWeight: "500",
-        "&::before": {
-            content: "''",
-            top:"23px",
-            left:"0",
-            position:"absolute",
-            width:"30px",
-            height:"2px",
-            backgroundColor:"#fff"
-        }
-
-    },
-    card_desc: {
-        fontSize: "11px",
-        fontFamily:"camphor",
-        fontWeight: "300",
-    },
-    card_stacks: {
-        display:"flex",
-        flexDirection:"row"
-    },
-    card_no : {
-        position:"absolute",
-        top: "0",
-        right:"8%",
-        fontSize:"50px",
-        fontFamily:"xyz",
-        fontWeight: "600",
-    },
     portfolio_Header : {
         fontSize : "80px",
         fontFamily: "xyz !important",
@@ -263,7 +131,7 @@ const useStyles = makeStyles((theme)=> ({
     portfolio_text : {
         margin:"0",
         width:"100%",
-        fontSize : "14px",
+        fontSize : "15px",
         lineHeight: "1.5",
         fontFamily: "camphor, Open Sans, Segoe UI, san-serif !important",
         fontWeight: '200px',
@@ -384,42 +252,7 @@ const useStyles = makeStyles((theme)=> ({
         to: {  transform: "rotate(405deg)"}
     }     
 }))
-
-const CssTextField = withStyles({
-    root: {
-        backgroundColor:"#2b2b2b",
-        width: "100%",
-        paddifng:"10px",
-      '& label.Mui-focused': {
-        color: '#08fdd8',
-      },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: '#08fdd8',
-      },
-      '& .MuiInput-underline': {
-        "&:hover": {
-            borderBottomColor: '#08fdd8',
-        }
-    },
-      '& .MuiInput-underline:before': {
-        borderBottomColor: '',
-      },
-      "& .MuiFormLabel-root": {
-            fontSize: "16px",
-            fontFamily: "camphor",
-            fontWeight:"400",
-            color:"#84808057",
-            paddingLeft:"10px"
-      },
-      '& .MuiInputBase-input': {
-        color:"#fff",
-        padding:"6px 10px",
-        fontSize:"15px",
-        fontFamily:"camphor",
-        fontWeight:"100px"
-      },
-    },
-  })(TextField);
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 const Profile = (props) => {
     const classes = useStyles()
@@ -428,6 +261,10 @@ const Profile = (props) => {
     const work = useRef(null)
     const grid = useRef(null)
     const root = useRef(null)
+
+
+    const myRef = useRef(null)
+    const executeScroll = () => scrollToRef(myRef)
 
     let tl = new TimelineLite({delay:0.8});
 
@@ -451,7 +288,7 @@ const Profile = (props) => {
         const gSixth = gFifth.nextSibling;
         const gSeventh = gSixth.nextSibling;
         const gEigth = gSeventh.nextSibling;
-        console.log(gFirst.children,gSecond.children,gThird.children);
+        // console.log(gFirst.children,gSecond.children,gThird.children);
         new hoverEffect({
             parent : container.current,
             intensity: 0.3,
@@ -512,7 +349,7 @@ const Profile = (props) => {
                                         </div>
                                         <div className={classes.node}>
                                         <span>
-                                            <img src={Img} style={{width:"60px", padding:"10px",borderRadius:"50%", backgroundColor:"#3d5c66cc"}}/>
+                                            <img src={Img} alt="" style={{width:"60px", padding:"10px",borderRadius:"50%", backgroundColor:"#3d5c66cc"}}/>
                                         </span>
                                         </div>
                                         <div className={[classes.ellipse, classes.yellow].join(' ')}></div>
@@ -523,7 +360,7 @@ const Profile = (props) => {
 
                                         <h3>    
                                             <span className={classes.emoji_container}>Hi,
-                                                <span className={classes.emoji}>👋</span>
+                                                <span className={classes.emoji} role="img" aria-label="">👋</span>
                                             </span>
                                         </h3> 
                                         <h3><span>I’m Peter,</span></h3>
@@ -533,14 +370,13 @@ const Profile = (props) => {
                                         <span>A passionate Front-end developer / UI/UX Designer</span>
                                     </div>
                                     <div className={classes.contact_btn}>
-                                        <span><Button className={classes.button} variant="outlined">
-                                            CONTACT ME
-                                        </Button></span>
+                                        <span>
+                                            <Button onClick={executeScroll} className={classes.button} variant="outlined">
+                                                CONTACT ME
+                                            </Button>
+                                        </span>
                                     </div>
                                 </div>
-                                {/* <div style={{width: "35%"}}> */}
-                                    {/* <img src={jblue} style={{height:"40rem"}}/> */}
-                                {/* </div> */}
                             </div>
                         </div>
                     </div>
@@ -559,9 +395,9 @@ const Profile = (props) => {
                                     <Grid item  xs={12} sm={12} md={10}>
                                         <div className={classes.portfolio_text}>
                                             <span>
-                                                A small gallery of recent projects chosen by me. I've done them all 
-                                                using various javascript frameworks E.g React, Vue, Node etc.                                                A small gallery of recent projects chosen by me. I've done them all 
-                                                using various javascript frameworks E.g React, Vue, Node etc. {/*<br/> */} 
+                                                i enjoy building beautiful, user-friendly websites and web applications. These are small gallery of recent 
+                                                projects chosen by me, Look through some of my work and experiences! If you 
+                                                like what you see and have a project you need to be coded, don't hesitate to contact me. 
                                             </span>
                                         </div>
                                     </Grid>
@@ -585,70 +421,6 @@ const Profile = (props) => {
                                             )
                                        })
                                    }
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg2} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg3} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg4} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg5} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg6} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg7} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} sm={6} md={4}>
-                                        <div className={classes.card}>
-                                            <img src={bg8} className={classes.card_img} style={{width:"100%"}}></img>
-                                            {/* <div className={classes.card_overlay}>
-                                            </div> */}
-                                            <span className={classes.card__rect}></span>
-                                            <span className={classes.card__tri}></span>
-                                        </div>
-                                    </Grid>
-                                    
                                 </Grid>
                             </div>
                         </div>
@@ -662,18 +434,21 @@ const Profile = (props) => {
                                 <Grid container spacing={4}>
                                     <Grid item md={7}>
                                         <p className={classes.portfolio_text} >
-                                        I’m Peter , a 23 years old self-taught Front-end developer.
+                                        The primary area of my interest is Front-end. 
                                         I passionately combine good design, technology, and innovation in all my projects, 
                                         which I like to accompany from the first idea to release. Currently, I'm focused 
-                                        on the development of responsive user interfaces with React and I'm interested in 
+                                        on the development of responsive user interfaces with <span style={{color:"#fd2155", fontFamily:"xyz",fontWeight:"400"}}>React</span> and <span style={{color: "#08fdd8", fontFamily:"xyz",fontWeight:"500"}}>Vue</span> and I'm interested in 
                                         JavaScript, Web Technologies, User Experience, 
                                         Accessibility, Clean Code, and the Universe. And everything in between<br/>
                                         <br/><br/>
-                                        When I am not writing code I love to spend time with my wife and 3 year old daughter at 
+                                        Currently, I am looking for a position as a front-end or full-stack developer, joining 
+                                        an experienced team and contribute to building great products.
+
+                                        {/* When I am not writing code I love to spend time with my wife and 3 year old daughter at 
                                         home in London or travelling around the world. We are quite a multi-cultural family with
                                          me having grown up in Germany 🇩🇪 and my wife being from Mexico 🇲🇽, which is why we raise 
                                          our daughter trilingual. I myself speak five languages (some better than others). 
-                                        Furthermore I enjoy cooking fresh food when I come home after a long day at the office.
+                                        Furthermore I enjoy cooking fresh food when I come home after a long day at the office. */}
                                         </p>
                                     </Grid>
                                 </Grid>
@@ -681,36 +456,10 @@ const Profile = (props) => {
                         </div>
                      </section>
                     
-                    <section className={classes.about_wrapper} id="About">
-                        <Grid container spacing={4}>
-                            <Grid item md={6}>
-                                <div className={classes.portfolio_Header}>
-                                    Contact me`
-                                </div >
-                                <div className={classes.portfolio_text} style={{marginTop:"1rem"}}>
-                                    I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form.
-                                </div>
-                                <form autoComplete="off" className={classes.form}>
-                                    <Grid container spacing={1}> 
-                                        <Grid item md={6} sm={6} xs={6}>
-                                            <CssTextField className={classes.margin} size="small" id="custom-css-standard-input" label="Name" />
-                                        </Grid>
-                                        <Grid item md={6} sm={6} xs={6}>
-                                            <CssTextField className={classes.margin} size="small" id="custom-css-standard-input" label="E-mail" />
-                                        </Grid>
-                                    </Grid>
-                                    <CssTextField className={classes.margin} size="small" id="custom-css-standard-input" label="Subject" />
-                                    <CssTextField className={classes.margin} multiline rows={5} size="small" id="custom-css-standard-input" label="Message" />
-                                </form>   
-                            </Grid>
-                            <Grid item md={6}>
-                                <img src={map} style={{width:"100%"}}></img>
-                            </Grid>
-                        </Grid>
-                        <div className={classes.contact_form}>
-                            
-                        </div>
+                    <section ref={myRef} className={classes.about_wrapper} id="About">
+                        <Contact/>
                     </section>
+                    
                </Container>
                 <div  style={{position: "absolute", top: "0", zIndex: "", right:"0", height: "100vh", width: "100%"}}>
                 <Particles

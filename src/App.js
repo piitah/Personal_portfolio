@@ -1,10 +1,10 @@
-import React, {useRef, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {Route, Switch} from "react-router-dom"
-import Header from "../src/components/Header.js"
+// import Header from "../src/components/Header.js"
 import Profile from "../src/components/Profile"
 import SideBar from "../src/components/SideBar.js"
 import { makeStyles} from "@material-ui/core/styles";
-import {Power3, TimelineLite,} from "gsap"
+// import {TimelineLite,} from "gsap"
 const useStyles = makeStyles((theme) => ({
   root: {
     width:"100%",
@@ -66,7 +66,7 @@ function App() {
     // const root2 = root.nextSibling
     // const root = document.querySelector("#root")
     // console.log(root.children[0],root2.children[0])
-    const tl = new TimelineLite({delay: 0.8})
+    // const tl = new TimelineLite({delay: 0.8})
     // tl.to([wrap1, wrap2, wrap3], {
     //   y:-700,
     //   opacity:0,
@@ -97,6 +97,10 @@ function App() {
         <div style={{width:"100%", position:"relative"}}>
         <Switch>
           <Route path="/" exact component={Profile} />
+          <Route path='/peter-peep' component={() => { 
+              window.location.href = 'http://peter-peep.herokuapp.com'; 
+              return null;
+          }}/>
         </Switch>
         </div>
       </div>

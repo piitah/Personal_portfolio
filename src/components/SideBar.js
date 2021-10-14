@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Facebook from "@material-ui/icons/Facebook";
 import Twitter from "@material-ui/icons/Twitter";
 import Instagram from "@material-ui/icons/Instagram";
-import IconButton from "@material-ui/core/IconButton";
+// import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from '@material-ui/core/SvgIcon';
 import img from "../assets/p2.png"
 import {Power3, TimelineLite,} from "gsap"
@@ -142,7 +142,7 @@ export default function SideBar() {
     <div className={classes.root}>
         <div ref={logo}>
              <span>
-                <img src={img} style={{width:"50px", padding:"10px", backgroundColor:"black"}}/>
+                <img src={img} alt="" style={{width:"50px", padding:"10px", backgroundColor:"black"}}/>
              </span>
         </div>
         <div className={classes.navLink} ref={navLink}>
