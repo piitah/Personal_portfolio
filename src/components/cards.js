@@ -1,9 +1,8 @@
 import React  from "react"
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
-import { FaReact, FaVuejs} from 'react-icons/fa';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import bg1 from "../assets/bg1.jpg"
-import bg2 from "../assets/bg2.jpg"
+
 
 const useStyles = makeStyles((theme) => ({
     card : {
@@ -11,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
         display:"block",
         backfaceVisibility: "hidden",
         width: "100%",
-        height:"100%",
         height:"max-content",
         cursor:"pointer",
         overflow:"hidden",
@@ -171,7 +169,7 @@ const useStyles = makeStyles((theme) => ({
     },
     skills : {
         fontFamily:"camphor",
-        fontSize:"12px",
+        fontSize:"10px",
         fontWeight:"500",
         padding:"5px 10px",
         backgroundColor:"#eee",
@@ -190,6 +188,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent:"start",
         alignItems:"normal",
         cursor:"pointer",
+        textDecoration:"none",
         [theme.breakpoints.down("sm")]: {
             marginTop: "12px",
         },
@@ -224,7 +223,7 @@ export default function Card (props) {
     return (
         <>
             <div className={classes.card}>
-                <img src={props.details.img} className={classes.card_img} style={{width:"100%"}}></img>
+                <img src={props.details.img} alt="" className={classes.card_img} style={{width:"100%"}}></img>
                 {/* <div className={classes.card_overlay}>
                 </div> */}
                 <span className={classes.card__rect}></span>
@@ -245,8 +244,11 @@ export default function Card (props) {
                         })
                     }
                 </div>
-                <div className={classes.link_wrapper}>
-                    <span className={classes.port_link}>Visit Site</span> <ArrowRightAltIcon style={{marginLeft:"7px", color:"#fff"}}/>
+                <div >
+                    <Link className={classes.link_wrapper} to={{ pathname: props.details.link }} target="_blank">
+                        <span className={classes.port_link}>Visit The Website</span> 
+                        <ArrowRightAltIcon style={{marginLeft:"7px", color:"#fff"}}/>
+                    </Link>
                 </div>
             </div>
             </div>
