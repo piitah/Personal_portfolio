@@ -33,7 +33,7 @@ export const datas = [
         desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
         img: require("./assets/proj5.png"),
         stacks: ["React", "Material UI"],
-        link: "olubiyipeter.netlify.app"
+        link: "https://olubiyipeter.netlify.app"
     },
     {
         title : "Netlify clone",

@@ -8,7 +8,7 @@ import { Container } from "@material-ui/core";
 import Contact from "../components/contact"
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
-import Skills from "../components/skills"
+// import Skills from "../components/skills"
 import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme)=> ({
     },
     portfolio_wrapper: {
         position:"relative",
-        width: "90%",
+        width: "80%",
         margin: "auto",
         zIndex:"20",
         [theme.breakpoints.down("xs")]: {
@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme)=> ({
     portfolio_text : {
         margin:"0",
         width:"100%",
-        fontSize : "15px",
+        fontSize : "14px",
         lineHeight: "1.5",
         fontFamily: "camphor, Open Sans, Segoe UI, san-serif !important",
         fontWeight: '200px',
@@ -162,7 +162,7 @@ const useStyles = makeStyles((theme)=> ({
         },
     },
     about_wrapper : {
-        width: "90%",
+        width: "80%",
         marginTop:"5rem",
         margin:"auto",
         [theme.breakpoints.down("xs")]: {
