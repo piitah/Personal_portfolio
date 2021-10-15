@@ -31,7 +31,7 @@ export const datas = [
     {
         title : "Portfolio",
         desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
-        img: require("./assets/proj5.png"),
+        img: require("./assets/pro5.png"),
         stacks: ["React", "Material UI"],
         link: "https://olubiyipeter.netlify.app"
     },
