@@ -453,7 +453,7 @@ const Profile = (props) => {
                                         </p>
                                     </Grid>
                                     <Grid item md={6}>
-                                            <Skills/>
+                                            {/* <Skills/> */}
                                     </Grid>
                                 </Grid>
                             </div>

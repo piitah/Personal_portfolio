@@ -22,18 +22,18 @@ export const datas = [
         link: "https://wearcare.netlify.app"
     },
     {
-        title : "Pastebin clone",
-        desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
-        img: require("./assets/bg4.jpg"),
+        title : "Mdela Store",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
+        img: require("./assets/pro4.png"),
         stacks: ["Vue", "Vuex", "Node", "MongoBb"],
-        link: "sssss"
+        link: "http://mdela.herokuapp.com"
     },
     {
-        title : "Netlify clone",
+        title : "Portfolio",
         desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt eaque aliquid doloremque id consequatur ratione. Modi, odio possimus",
-        img: require("./assets/bg7.jpg"),
-        stacks: ["Vue", "Vuex", "Node", "MongoBb"],
-        link: "sssss"
+        img: require("./assets/proj5.png"),
+        stacks: ["React", "Material UI"],
+        link: "olubiyipeter.netlify.app"
     },
     {
         title : "Netlify clone",
