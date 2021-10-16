@@ -37,9 +37,14 @@ const useStyles = makeStyles((theme) => ({
                 }
             },
             "& $card_inner_wrap":{
-                top:"20%",
+                top:"0",
+                left:"0",
+                height:"100%",
+                display:"flex",
+                flexDirection:"row",
+                justifyContent:"center",
+                alignItems:"center",
                 opacity:"1"
-                // display:"block"
             }
         }
     },
@@ -100,13 +105,15 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     card_inner_wrap: {
+        backfaceVisibility: "hidden",
         position:"absolute",
         top:"400px",
-        left:"10px",
-        margin:"10px 0",
+        left:"0",
+        height:"100%",
+        padding:"0 10px",
         opacity:"0",
         transition: "all .6s ease-in-out",
-        maxWidth:"100%"
+        maxWidth:"100%",
     },
     card_title: {
         margin:"0",
@@ -189,6 +196,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems:"normal",
         cursor:"pointer",
         textDecoration:"none",
+        marginTop: "19px",
         [theme.breakpoints.down("sm")]: {
             marginTop: "12px",
         },
@@ -229,28 +237,30 @@ export default function Card (props) {
                 <span className={classes.card__rect}></span>
                 <span className={classes.card__tri}></span>
                 <div className={classes.card_inner_wrap}>
-                <p className={classes.card_title}>{props.details.title}</p>
-                <p className={classes.card_desc}>
-                    {props.details.desc}
-                </p>
-                <div className={classes.stacks}>
-                    {
-                        props.details.stacks.map((stack, key) => {
-                            return (
-                                <div className={classes.skills_wrapper}>
-                                    <div key={key} className={classes.skills}>{stack}</div>
-                                </div>
-                            )
-                        })
-                    }
+                    <div style={{position:"relative"}}>
+                        <p className={classes.card_title}>{props.details.title}</p>
+                        <p className={classes.card_desc}>
+                            {props.details.desc}
+                        </p>
+                        <div className={classes.stacks}>
+                            {
+                                props.details.stacks.map((stack, key) => {
+                                    return (
+                                        <div className={classes.skills_wrapper}>
+                                            <div key={key} className={classes.skills}>{stack}</div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div >
+                            <Link className={classes.link_wrapper} to={{ pathname: props.details.link }} target="_blank">
+                                <span className={classes.port_link}>Visit The Website</span> 
+                                <ArrowRightAltIcon style={{marginLeft:"7px", color:"#fff"}}/>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <div >
-                    <Link className={classes.link_wrapper} to={{ pathname: props.details.link }} target="_blank">
-                        <span className={classes.port_link}>Visit The Website</span> 
-                        <ArrowRightAltIcon style={{marginLeft:"7px", color:"#fff"}}/>
-                    </Link>
-                </div>
-            </div>
             </div>
             
         </>
