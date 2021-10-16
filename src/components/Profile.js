@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme)=> ({
     portfolio_text : {
         margin:"0",
         width:"100%",
-        fontSize : "14px",
+        fontSize : "12px",
         lineHeight: "1.5",
         fontFamily: "camphor, Open Sans, Segoe UI, san-serif !important",
         fontWeight: '200px',
