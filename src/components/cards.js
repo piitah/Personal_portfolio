@@ -107,9 +107,9 @@ const useStyles = makeStyles((theme) => ({
     card_inner_wrap: {
         backfaceVisibility: "hidden",
         position:"absolute",
-        top:"400px",
+        top:"350px",
         left:"0",
-        height:"100%",
+        // height:"100%",
         padding:"0 10px",
         opacity:"0",
         transition: "all .6s ease-in-out",
@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     card_desc: {
-        fontSize: "0.8rem",
+        fontSize: "0.7rem",
         fontFamily:"camphor",
         fontWeight: "300",
         color:"#fbe9e9",
