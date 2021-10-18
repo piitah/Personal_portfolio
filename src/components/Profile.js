@@ -8,7 +8,7 @@ import { Container } from "@material-ui/core";
 import Contact from "../components/contact"
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
-// import Skills from "../components/skills"
+import Skills from "../components/skills"
 import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
@@ -453,7 +453,7 @@ const Profile = (props) => {
                                         </p>
                                     </Grid>
                                     <Grid item md={6}>
-                                            {/* <Skills/> */}
+                                            <Skills/>
                                     </Grid>
                                 </Grid>
                             </div>
