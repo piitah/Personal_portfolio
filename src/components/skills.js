@@ -30,32 +30,28 @@ const useStyles = makeStyles((theme) =>({
         },
     },
     skills_wrapper:{
-        width:"100%",
-        height:"100%",
         position:"relative",
-        "&::before" : {
-            content: "''",
-            position:"absolute",
-            height:"300px",
-            width:"3px",
-            backgroundColor:"#999",
-            top:"0",
-            left:"0",
-            [theme.breakpoints.down("xs")]: {
-                display: "none",
-                margin: "0"
-            },
-        }
+        height:"max-content",
+        width:"100%",
+        borderLeft:"3px solid #999",
+        top:"0",
+        left:"0",
+        marginBottom: "10px",
+        [theme.breakpoints.down("xs")]: {
+            display: "none",
+            margin: "0"
+        },
     },
     skills_svg: {
-        margin:"0px 0px 0px 30px",
+        margin:"-19px 0px 0px 30px",
         paddingBottom:"20px",
         position:"relative",
+        width:"100%",
         "&::before" : {
             content : "''",
             position: "absolute",
             top:"0",
-            left: "-39px",
+            left: "-41px",
             width: "20px",
             borderRadius:"50%",
             height:"20px",
@@ -163,6 +159,7 @@ const Skills = (props) => {
             <div style={{position:"relative", width:"100%", height:"100%"}}>
                 {/* <div id="chartdiv" className={classes.wrap}></div> */}
                 <div className={classes.skills_wrapper}>
+                    {/* &nbsp; */}
                     <div className={classes.skills_svg}>
                         <h3 className={classes.skills_header}>Frontend Technology</h3>
                         <img src={img4} alt=""  style={{weight:"80px", height:"80px"}}></img>

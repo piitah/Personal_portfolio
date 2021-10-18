@@ -9,6 +9,7 @@ import Contact from "../components/contact"
 import {TweenMax, Power3, Power4, TimelineLite} from "gsap"
 import Card from "../components/cards"
 import Skills from "../components/skills"
+import Footer from "../components/Footer"
 import {datas} from "../Data"
 // assets
 import Img from "../assets/p2.png"
@@ -464,6 +465,7 @@ const Profile = (props) => {
                         <Contact/>
                     </section>
                     
+                    
                </Container>
                 <div  style={{position: "absolute", top: "0", zIndex: "", right:"0", height: "100vh", width: "100%"}}>
                 <Particles
@@ -581,6 +583,9 @@ const Profile = (props) => {
                     }}
                 /> 
                 </div>
+                <section styles={{width:"100% !important"}}>
+                        <Footer></Footer>
+                    </section>
             </div> 
         </>
     )
