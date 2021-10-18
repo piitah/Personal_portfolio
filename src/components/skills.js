@@ -37,10 +37,10 @@ const useStyles = makeStyles((theme) =>({
         top:"0",
         left:"0",
         marginBottom: "10px",
-        [theme.breakpoints.down("xs")]: {
-            display: "none",
-            margin: "0"
-        },
+        // [theme.breakpoints.down("xs")]: {
+        //     display: "none",
+        //     margin: "0"
+        // },
     },
     skills_svg: {
         margin:"-19px 0px 0px 30px",
