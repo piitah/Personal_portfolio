@@ -16,6 +16,9 @@ import Img from "../assets/p2.png"
 import bg3 from "../assets/bg3.jpg"
 import bg7 from "../assets/bg7.jpg"
 import space from "../assets/bbgg.jpg"
+import linkedin from "../assets/linkedin.svg"
+import gmail from "../assets/gmail-icon.svg"
+import github from "../assets/github.svg"
 
 const useStyles = makeStyles((theme)=> ({
     root: {
@@ -86,7 +89,7 @@ const useStyles = makeStyles((theme)=> ({
     title: {
         marginTop: "-30px",
         fontFamily:  "Camphor, Open Sans, Segoe UI, san-serif !important",
-        fontSize: "13px",
+        fontSize: "16px",
         letterSpacing: "0px",
         color: "#969090"
     },
@@ -245,6 +248,23 @@ const useStyles = makeStyles((theme)=> ({
         left: "12px",
         animation : "$ellipseRotate 12s ease-in-out infinite"
     },
+    list_wrapper: {
+        margin:"0",
+        padding:"0",
+        listStyle: "none",
+        display: "inline-flex"
+        
+    },
+    list_item : {
+        textDecoration:"none",
+        padding:"0px 28px 0px 0px",
+        width:"20px",
+        height:"20px",
+        cursor:"pointer"
+    },
+    contact_icon: {
+        width:"40px"
+    },
     "@keyframes ellipseRotate":{
         from: { transform: "rotate(-45deg)"},
         to: {  transform: "rotate(-405deg)"}
@@ -369,14 +389,34 @@ const Profile = (props) => {
                                         <h3><span>web developer.</span></h3>
                                     </div>
                                     <div className={classes.title}>
-                                        <span>A passionate Front-end developer / UI/UX Designer</span>
+                                        {/* <span>A passionate Front-end developer / UI/UX Designer</span> */}
+                                        <span>
+                                            I'm a Frontend Developer based in Lagos, NG specializing in <br/>building exceptional websites, applications, and everything in between.
+                                        </span>
                                     </div>
                                     <div className={classes.contact_btn}>
-                                        <span>
+                                        <div>
+                                            <ul className={classes.list_wrapper}>
+                                                <li className={classes.list_item}>
+                                                    {/* peter */}
+                                                    <img src={linkedin} className={classes.contact_icon} alt="Linkedin"></img>
+                                                </li>
+                                                <li className={classes.list_item}>
+                                                    {/* seun */}
+                                                    <img src={github} className={classes.contact_icon} alt=""></img>
+                                                </li>
+                                                <li onClick={executeScroll} className={classes.list_item}>
+                                                    {/* seun */}
+                                                    <img src={gmail} className={classes.contact_icon} alt=""></img>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        {/* <span>
+                                            
                                             <Button onClick={executeScroll} className={classes.button} variant="outlined">
                                                 CONTACT ME
                                             </Button>
-                                        </span>
+                                        </span> */}
                                     </div>
                                 </div>
                             </div>
