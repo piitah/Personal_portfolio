@@ -92,9 +92,20 @@ const useStyles = makeStyles((theme)=> ({
         fontSize: "16px",
         letterSpacing: "0px",
         color: "#969090",
-        width:"60%",
+        width:"80%",
         [theme.breakpoints.down("sm")]: {
             width:"80%"
+        },
+    },
+    title_text: {
+        fontFamily:  "Camphor, Open Sans, Segoe UI, san-serif !important",
+        fontSize: "16px",
+        letterSpacing: "0px",
+        color: "#969090",
+        width:"90%",
+        [theme.breakpoints.down("sm")]: {
+            width:"100%",
+            fontSize: "13px",
         },
     },
     contact_btn : {
@@ -106,7 +117,7 @@ const useStyles = makeStyles((theme)=> ({
         margin: "auto",
         zIndex:"20",
         [theme.breakpoints.down("xs")]: {
-            width:"80%"
+            width:"90%"
         }
     },
     portfolio_wrapper_inner: {
@@ -392,9 +403,9 @@ const Profile = (props) => {
                                         <h3><span>I’m Peter,</span></h3>
                                         <h3><span>web developer.</span></h3>
                                     </div>
-                                    <div >
+                                    <div className={classes.title}>
                                         {/* <span>A passionate Front-end developer / UI/UX Designer</span> */}
-                                        <div className={classes.title}>
+                                        <div className={classes.title_text}>
                                             I'm a Frontend Developer based in Lagos, NG specializing in building exceptional websites, applications, and everything in between.
                                         </div>
                                     </div>
