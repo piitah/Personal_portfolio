@@ -185,7 +185,7 @@ const useStyles = makeStyles((theme)=> ({
         marginTop:"5rem",
         margin:"auto",
         [theme.breakpoints.down("xs")]: {
-            width:"80%"
+            width:"90%"
         }
     },
     margin: {
