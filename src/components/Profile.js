@@ -390,9 +390,9 @@ const Profile = (props) => {
                                     </div>
                                     <div className={classes.title}>
                                         {/* <span>A passionate Front-end developer / UI/UX Designer</span> */}
-                                        <span>
-                                            I'm a Frontend Developer based in Lagos, NG specializing in <br/>building exceptional websites, applications, and everything in between.
-                                        </span>
+                                        <div style={{width:"60%"}}>
+                                            I'm a Frontend Developer based in Lagos, NG specializing in building exceptional websites, applications, and everything in between.
+                                        </div>
                                     </div>
                                     <div className={classes.contact_btn}>
                                         <div>
