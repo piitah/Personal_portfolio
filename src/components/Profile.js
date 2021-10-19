@@ -91,7 +91,11 @@ const useStyles = makeStyles((theme)=> ({
         fontFamily:  "Camphor, Open Sans, Segoe UI, san-serif !important",
         fontSize: "16px",
         letterSpacing: "0px",
-        color: "#969090"
+        color: "#969090",
+        width:"60%",
+        [theme.breakpoints.down("sm")]: {
+            width:"80%"
+        },
     },
     contact_btn : {
         marginTop : "20px"
@@ -102,7 +106,7 @@ const useStyles = makeStyles((theme)=> ({
         margin: "auto",
         zIndex:"20",
         [theme.breakpoints.down("xs")]: {
-            width:"90%"
+            width:"80%"
         }
     },
     portfolio_wrapper_inner: {
@@ -170,7 +174,7 @@ const useStyles = makeStyles((theme)=> ({
         marginTop:"5rem",
         margin:"auto",
         [theme.breakpoints.down("xs")]: {
-            width:"90%"
+            width:"80%"
         }
     },
     margin: {
