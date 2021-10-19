@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme)=> ({
         margin: "auto",
         zIndex:"20",
         [theme.breakpoints.down("xs")]: {
-            width:"100%"
+            width:"90%"
         }
     },
     portfolio_wrapper_inner: {
@@ -170,7 +170,7 @@ const useStyles = makeStyles((theme)=> ({
         marginTop:"5rem",
         margin:"auto",
         [theme.breakpoints.down("xs")]: {
-            width:"100%"
+            width:"90%"
         }
     },
     margin: {
