@@ -208,7 +208,7 @@ const Contact = (props) => {
                         </form>   
                     </Grid>
                     <Grid item md={6}>
-                        <img src={map} alt="" style={{width:"100%"}}></img>
+                        <img src={map} alt="" style={{width:"100%", height:"100%"}}></img>
                     </Grid>
                 </Grid>
                 <div className={classes.contact_form}>

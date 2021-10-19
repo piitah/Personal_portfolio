@@ -56,17 +56,13 @@ const useStyles = makeStyles((theme) =>({
             borderRadius:"50%",
             height:"20px",
             backgroundColor: "#08fdd8",
-            [theme.breakpoints.down("xs")]: {
-                display: "none",
-                margin:"0px 0px 0px 0px",
-            },
         },
-        skills_header : {
-            fontSize: "25px",
-            fontFamily: "xyz",
-            fontWeight: "400",
-            paddingBottom:"20px"
-        }
+    },
+    skills_header : {
+        fontSize: "25px",
+        fontFamily: "xyz",
+        fontWeight: "400",
+        paddingBottom:"20px"
     }
 }))
 const Skills = (props) => {
@@ -161,11 +157,13 @@ const Skills = (props) => {
                 <div className={classes.skills_wrapper}>
                     {/* &nbsp; */}
                     <div className={classes.skills_svg}>
-                        <h3 className={classes.skills_header}>Frontend Technology</h3>
-                        <img src={img4} alt=""  style={{weight:"80px", height:"80px"}}></img>
-                        <img src={img5} alt=""  style={{weight:"80px", height:"80px"}}></img>
-                        <img src={img2} alt=""  style={{weight:"80px", height:"80px"}}></img>
-                        <img src={img3} alt=""  style={{weight:"80px", height:"80px"}}></img>
+                        <div style={{width:"90%"}}>
+                            <h3 className={classes.skills_header}>Frontend Technology</h3>
+                            <img src={img4} alt=""  style={{weight:"80px", height:"80px"}}></img>
+                            <img src={img5} alt=""  style={{weight:"80px", height:"80px"}}></img>
+                            <img src={img2} alt=""  style={{weight:"80px", padding:"4px", height:"80px"}}></img>
+                            <img src={img3} alt=""  style={{weight:"80px", height:"80px"}}></img>
+                        </div>
                     </div>
                     <div className={classes.skills_svg}>
                         <h3 className={classes.skills_header}>Backend Technology</h3>
