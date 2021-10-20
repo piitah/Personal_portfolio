@@ -2,7 +2,7 @@ import React  from "react";
 import { makeStyles, withStyles } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
-import map from "../assets/map.png"
+import map from "../assets/Nig.jpg"
 import { Button } from "@material-ui/core";
 import emailjs from 'emailjs-com'
 import { useForm } from 'react-hook-form';
@@ -44,6 +44,16 @@ const useStyles = makeStyles((theme) => ({
         cursor: "pointer"    ,
         zIndex: "20",
         float:"right"
+    },
+    overlay: {
+        width:"100%",
+        height:"100%",
+        backgroundImage: `linear-gradient( to right bottom, 
+            rgba(8, 253, 216, 0.18), 
+            rgba(253, 33, 85, 0.23))`, 
+        position:"absolute",
+        top:"0",
+        left:"0"
     },
     errorMsg_wrapper: {
         color:"#fd2155",
@@ -207,7 +217,10 @@ const Contact = (props) => {
                             <Button className={classes.button} type="submit" variant="outlined">Contact Me</Button>
                         </form>   
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} style={{position:"relative"}}>
+                        <div className={classes.overlay}>
+                            &nbsp;
+                        </div>
                         <img src={map} alt="" style={{width:"100%", height:"100%"}}></img>
                     </Grid>
                 </Grid>

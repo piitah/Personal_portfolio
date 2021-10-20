@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme)=> ({
         fontSize: "16px",
         letterSpacing: "0px",
         color: "#969090",
-        width:"80%",
+        width:"70%",
         [theme.breakpoints.down("sm")]: {
             width:"80%"
         },
