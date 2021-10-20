@@ -160,7 +160,7 @@ const Contact = (props) => {
                             {/* I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form. */}
                             If you have an application you are interested in developing that you need built or a project that needs coding. I'd love to help with it.
                         </div>
-                        <form autoComplete="on" onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+                        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} className={classes.form}>
                             <Grid container spacing={1}> 
                                 <Grid item md={6} sm={6} xs={6}>
                                     <div style={{position:"relative"}}>
