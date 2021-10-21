@@ -49,11 +49,25 @@ const useStyles = makeStyles((theme) => ({
         width:"100%",
         height:"100%",
         backgroundImage: `linear-gradient( to right bottom, 
-            rgba(8, 253, 216, 0.18), 
-            rgba(253, 33, 85, 0.23))`, 
+            rgba(8, 253, 216, 0.07), 
+            rgb(29, 29, 29))`, 
         position:"absolute",
         top:"0",
-        left:"0"
+        left:"0",
+        // "&::before" : {
+        //     content:"'Location'",
+        //     color:"#08fdd8",
+        //     fontSize:"40px",
+        //     fontFamily:"xyz",
+        //     fontWeight:"600",
+        //     top:"0",
+        //     left:"0",
+        //     height:"100%",
+        //     display:"flex",
+        //     flexDirection:"row",
+        //     justifyContent:"center",
+        //     alignItems:"center",
+        // }
     },
     errorMsg_wrapper: {
         color:"#fd2155",
@@ -160,7 +174,7 @@ const Contact = (props) => {
                             {/* I’m interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to use the form. */}
                             If you have an application you are interested in developing that you need built or a project that needs coding. I'd love to help with it.
                         </div>
-                        <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+                        <form autoComplete="on" onSubmit={handleSubmit(onSubmit)} className={classes.form}>
                             <Grid container spacing={1}> 
                                 <Grid item md={6} sm={6} xs={6}>
                                     <div style={{position:"relative"}}>
